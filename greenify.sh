@@ -198,7 +198,7 @@ touch "$TARGET_FILE"
 DATES=()
 if [[ -n $DRAW_MESSAGE ]]; then
     # TODO: I don't know how to do pixel fonts
-    FONTS[$(asc \s)]="00000000000000000000000000000000000"
+    FONTS[$(asc ' ')]="00000000000000000000000000000000000"
     FONTS[$(asc 0)]="01110100011100110101100111000101110"
     FONTS[$(asc 1)]="00100011001010000100001000010011111"
     FONTS[$(asc 2)]="01110100010000100010001000100011111"
@@ -240,7 +240,7 @@ if [[ -n $DRAW_MESSAGE ]]; then
         DATA="${FONTS[$(asc $CHAR)]}"
 
         if [[ -z "$DATA" ]]; then
-            echo "WARN: Character $CHAR does not exist in font, replacing with space"
+            echo "WARN: Character '$CHAR' does not exist in font, replacing with space"
             DATA="${FONTS[$(asc \s)]}"
         fi
 
