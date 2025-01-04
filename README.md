@@ -20,7 +20,13 @@ or write anything you want?
 Generate random number of commits each day throughout the specified dates on a specified repository:
 
 ```shell
-$ ./github-contrib-fuzzer -df 2017-01-01 -dt 2018-01-01` /home/user/my-repository
+$ ./github-contrib-fuzzer -df 2024-01-07 -dt 2025-01-05` /home/user/my-repository
+```
+
+Create commits such that it spells out certain text:
+
+```shell
+$ ./github-contrib-fuzzer -df 2024-01-07 -m DEEZ` /home/user/my-repository
 ```
 
 ### Options
