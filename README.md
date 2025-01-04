@@ -26,7 +26,7 @@ $ ./greenify.sh -df 2024-01-07 -dt 2025-01-05` /home/user/my-repository
 Create commits such that it spells out certain text:
 
 ```shell
-$ ./greenify.sh -df 2024-01-07 -m DEEZ` /home/user/my-repository
+$ ./greenify.sh -df 2024-01-07 -m DEEZ `/home/user/my-repository
 ```
 
 ### Options
