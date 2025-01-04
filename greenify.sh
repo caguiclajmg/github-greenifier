@@ -274,11 +274,17 @@ else
     done
 fi
 
+echo "Generating ${#DATES[@]} commits, this may take a while."
+COUNTER=0
 for DATE in "${DATES[@]}"; do
     echo "$(random_string)" > $TARGET_FILE
 
     git add $TARGET_FILE
     git commit -m "$DATE" --date $DATE &> /dev/null
+    COUNTER=$((COUNTER+1))
+    if [[ $(($COUNTER % 100)) -eq 0 ]]; then
+      echo "Generating commits, $COUNTER/${#DATES[@]}"
+    fi
 done
 
 if [[ -n "$(git remote -v | grep '(push)')" ]]; then
