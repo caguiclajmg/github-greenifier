@@ -51,7 +51,7 @@ case $OSTYPE in
         ;;
 esac
 
-DATE_FROM="$($CMD_DATE -I)"
+DATE_FROM="$($CMD_DATE -I -d '-1 year 2 days')"
 DATE_TO="$($CMD_DATE -I)"
 WORKING_DIR="$(pwd)"
 TARGET_FILE="dummy.txt"
