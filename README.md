@@ -1,4 +1,4 @@
-# github-contrib-fuzzer
+# github-greenifier
 
 A Bash script that makes your contribution graph green.
 
