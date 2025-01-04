@@ -39,14 +39,11 @@ $ ./greenify.sh -df 2024-01-07 -m DEEZ /home/user/my-repository
 
 `-m|--draw-message` - Make commits on certain days as to make the specified message appear on the contribution graph
 
-
 `--commit-count` - Amount of commits to make each day. If this is specified, `--commit-min` and `--commit-max` are ignored.
 
 `--commit-min` - Minimum amount of commits each day
 
 `--commit-max` - Maximum amount of commits each day
-
-`-n|--create-directory` - Creates the specified directory if it doesn't exist and sets up a git repository.
 
 <sup>Note: No remotes are added so the user will have to manually add a remote and push the changes.</sup>
 

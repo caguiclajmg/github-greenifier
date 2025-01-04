@@ -159,11 +159,6 @@ while [[ $# -gt 0 ]]; do
             shift
             shift
             ;;
-        -n|--create-directory)
-            DIR_CREATE=true
-            shift
-            shift
-            ;;
         -h|--help)
             terminate 1
             shift
@@ -184,9 +179,10 @@ set -- "${ARGS[@]}"
 
 if [[ -z $1 ]]; then terminate 1; fi
 
-WORKING_DIR="$1"
+WORKING_DIR="$(realpath $1)"
 
-if [[ ! -e $WORKING_DIR ]] && [[ "$DIR_CREATE" = true ]]; then
+if [[ ! -d $WORKING_DIR ]]; then
+    echo "Destination directory $WORKING_DIR does not exist, creating."
     mkdir -p "$WORKING_DIR"
     pushd "$WORKING_DIR" > /dev/null
     git init > /dev/null
